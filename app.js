@@ -30,9 +30,6 @@ app.get('/flickr', async (req, res) => {
                 throw err;
             }
             json = JSON.stringify(result, null, 4);
-            // json = JSON.stringify(result);
-            // json = jsontemp.replace(/(\r\n|\n|\r)/gm, "");
-            // json = jsontemp.replace(/[\r\n]+/gm, "");
             console.log(json)
         })
 
@@ -40,7 +37,7 @@ app.get('/flickr', async (req, res) => {
         fs.writeFileSync('flickr.json', json)
 
         // res.send(JSON.stringify(json))
-        res.json(JSON.parse(json));
+        res.status(200).json(JSON.parse(json));
     //   res.send('Done – check console log')
     } catch (err) {
 
@@ -50,5 +47,5 @@ app.get('/flickr', async (req, res) => {
 })
 
 app.listen(3000, () => {
- console.log("Server running on port 3000");
+    console.log("Server running on port 3000");
 });
