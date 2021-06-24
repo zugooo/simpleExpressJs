@@ -1,0 +1,12 @@
+{
+    "name": "mynodejsapp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo"
+    },
+    "author": "zugo",
+    "license": "ISC"
+
+}
