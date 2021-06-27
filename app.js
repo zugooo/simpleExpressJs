@@ -8,6 +8,11 @@ const fs = require('fs');
 // const parser = new xml2js.Parser();
 
 // const xml = fs.readFileSync('flickr.json');
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.get("/url", (req, res, next) => {
     console.log("[Tony,Lisa,Michael,Ginger,Food]")
@@ -46,6 +51,6 @@ app.get('/flickr', async (req, res) => {
     }
 })
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+app.listen(8001, () => {
+    console.log("Server running on port 8001");
 });
